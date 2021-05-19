@@ -2,7 +2,7 @@
 
 This repo uses C#/WinRT to generate a projection, distribute as a NuGet package and consume it using Project Reunion templates.
 
-Before building, make sure to go to **Build** -> **Configuration Manager**, and set all projects to x86/Win32. (You can also choose another configuration, but need to change the Configuration settings as well as the nuspec paths.
+Before building, make sure to go to **Build** -> **Configuration Manager**, and set all projects to x86/Win32. (You can also choose another configuration, but need to change the Configuration settings as well as the nuspec paths).
 
 Note: Package restore will fail on **ProjectReunionApp**, since we first need to generate the SimpleMathComponent.nupkg.
 
