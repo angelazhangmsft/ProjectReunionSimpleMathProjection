@@ -25,12 +25,6 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <BuildOutDir>$([MSBuild]::NormalizeDirectory('$(SolutionDir)_build', '$(Platform)', '$(Configuration)'))</BuildOutDir>
-    <OutDir>$([MSBuild]::NormalizeDirectory('$(BuildOutDir)', '$(MSBuildProjectName)', 'bin'))</OutDir>
-    <IntDir>$([MSBuild]::NormalizeDirectory('$(BuildOutDir)', '$(MSBuildProjectName)', 'obj'))</IntDir>
-  </PropertyGroup>
-
-  <PropertyGroup>
     <GeneratedNugetDir>.\nuget\</GeneratedNugetDir>
     <NuspecFile>$(GeneratedNugetDir)SimpleMathComponent.nuspec</NuspecFile>
     <OutputPath>$(GeneratedNugetDir)</OutputPath>
