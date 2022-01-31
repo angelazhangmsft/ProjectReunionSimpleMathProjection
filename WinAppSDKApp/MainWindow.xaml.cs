@@ -16,7 +16,7 @@ using Windows.Foundation.Collections;
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
 
-namespace ProjectReunionApp
+namespace WinAppSDKApp
 {
     /// <summary>
     /// An empty window that can be used on its own or navigated to within a Frame.
@@ -26,12 +26,13 @@ namespace ProjectReunionApp
         public MainWindow()
         {
             this.InitializeComponent();
-            var x = new SimpleMathComponent.SimpleMath();
         }
 
         private void myButton_Click(object sender, RoutedEventArgs e)
         {
-            myButton.Content = "Clicked";
+            var x = new SimpleMathComponent.SimpleMath();
+            var y = x.add(4, 5);
+            myButton.Content = y.ToString();
         }
     }
 }

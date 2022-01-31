@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>SimpleMathComponent</id>
+    <version>0.1.0-prerelease</version>
+    <authors>Contoso Math Inc.</authors>
+    <description>A simple component with basic math operations</description>
+    <dependencies>
+      <group targetFramework="net6.0-windows10.0.19041.0"/>
+    </dependencies>
+  </metadata>
+  <files>
+    <!--Architecture-netural assemblies-->
+    <!--<file src="..\..\_build\x64\Debug\SimpleMathComponent.Interop\bin\SimpleMathComponent.Interop.dll" target="lib\net6.0-windows10.0.19041.0\SimpleMathComponent.Interop.dll" />-->
+    <file src="..\..\_build\x86\Debug\SimpleMathComponent.Interop\bin\SimpleMathComponent.Interop.dll" target="lib\net6.0-windows10.0.19041.0\SimpleMathComponent.Interop.dll" />
+    <!--<file src="..\..\_build\arm64\Debug\SimpleMathComponent.Interop\bin\SimpleMathComponent.Interop.dll" target="lib\net6.0-windows10.0.19041.0\SimpleMathComponent.Interop.dll" />-->
+    <!--Arch-specific implementation DLLs should be copied into rid-relative folders -->
+    <file src="..\..\_build\Win32\Debug\SimpleMathComponent\bin\SimpleMathComponent\SimpleMathComponent.dll" target="runtimes\win10-x86\native\SimpleMathComponent.dll" />
+    <file src="..\..\_build\x64\Debug\SimpleMathComponent\bin\SimpleMathComponent\SimpleMathComponent.dll" target="runtimes\win10-x64\native\SimpleMathComponent.dll" />
+    <file src="..\..\_build\arm64\Debug\SimpleMathComponent\bin\SimpleMathComponent\SimpleMathComponent.dll" target="runtimes\win10-arm64\native\SimpleMathComponent.dll" />
+  </files>
+</package>
