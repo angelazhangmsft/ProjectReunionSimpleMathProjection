@@ -1,12 +1,11 @@
-# SimpleMath Projection Sample with Project Reunion
+# SimpleMath Projection Sample with Windows App SDK
 
-This repo uses C#/WinRT to generate a projection, distribute as a NuGet package and consume it using Project Reunion templates.
+This repo uses C#/WinRT to generate a projection from a simple C++/WinRT component, distribute the projection as a NuGet package, and consume the package from a Windows App SDK app.
 
-Before building, make sure to go to **Build** -> **Configuration Manager**, and set all projects to x86/Win32. (You can also choose another configuration, but need to change the Configuration settings as well as the nuspec paths).
+Before building, make sure to go to **Build** -> **Configuration Manager**, and set all projects to x64. Note that the projection library project sets `<PlatformTarget>AnyCPU</PlatformTarget>` in order to build a non architecture-specific interop assembly, so that any consuming apps can reference the projection.
 
-Note: Package restore will fail on **ProjectReunionApp**, since we first need to generate the SimpleMathComponent.nupkg.
+Build steps: 
 
-To build and run:
-
-- First build the **SimpleMathComponent.Interop** project. This should first build **SimpleMathComponent** (generating SimpleMathComponent.winmd). Then it will build the projection interop project, generating SimpleMathComponent.Interop.dll as well as the SimpleMathComponent.nupkg.
-- Then set **ProjectReunionApp (Package)** as the Startup Project, right-click on the Solution -> Restore NuGet Packages, and then you can build and deploy **ProjectReunionApp (Package)**.
+1. Build **SimpleMathComponent** for all architectures: x64, x86, and ARM64.
+2. Build **WinAppSDKSimpleMathProjection** to generate the NuGet package (the nuspec requires setting the platform to x64, but note that the output projection assembly is AnyCPU).
+3. Restore the **SimpleMathComponent** package in **WinAppSDKApp** before building and running the app.
